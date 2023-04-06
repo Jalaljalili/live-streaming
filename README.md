@@ -45,3 +45,11 @@ add new nginx.conf
  ./live-hls.sh SOURCE_FILE [OUTPUT_NAME]
  ./vod-hls.sh SOURCE_FILE [OUTPUT_NAME]
  ```
+ ## Sets the logo at the top right of the video
+The script creates an "output" directory. It also overlays the PNG logo file on the video using FFmpeg's overlay filter.
+The script sets the logo_pos variable to "main_w-overlay_w-10:10", which positions the logo at the top right corner of the video, with a 10-pixel margin from the right and top edges.
+The output files are named "output.m3u8" that contains all the different bitrates. The playlist file is written in the "output" directory.
+*  To run the script, save it to a file (e.g. "set-logo.sh"), make it executable with chmod +x set-logo.sh, and run it with 
+```shell
+./set-logo.sh
+```
