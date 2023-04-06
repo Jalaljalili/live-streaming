@@ -32,3 +32,11 @@ do
            -b:v "$bitrate" \
            "$output_file"
 done
+
+# Create a single HLS playlist file that contains all the bitrates
+echo "#EXTM3U" > "$output_dir/output.m3u8"
+for bitrate in "${bitrates[@]}"
+do
+    echo "#EXT-X-STREAM-INF:BANDWIDTH=${bitrate}" >> "$output_dir/output.m3u8"
+    echo "output_${bitrate}.m3u8" >> "$output_dir/output.m3u8"
+done
