@@ -23,7 +23,7 @@ cd nginx
 
 make && make install
 
-wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx && chmod +755 nginx
+wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx && chmod +755 /etc/init.d/nginx
 
 update-rc.d nginx defaults
 
