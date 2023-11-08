@@ -9,3 +9,5 @@ run_ffmpeg() {
 for ((i=1; i<=10; i++)); do
     run_ffmpeg &
 done
+# Wait for all background jobs to complete
+wait
